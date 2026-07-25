@@ -1,0 +1,45 @@
+<div class="profile-container">
+  <div class="profile-card">
+    <h2>Student Profile</h2>
+    <div class="profile-details">
+      <p><strong>Name:</strong> {{ student.name }}</p>
+      <p><strong>Email:</strong> {{ student.email }}</p>
+      <p><strong>Registration No:</strong> {{ student.regNo }}</p>
+      <p><strong>Major:</strong> {{ student.major }}</p>
+      <p><strong>GPA:</strong> {{ student.gpa }}</p>
+    </div>
+  </div>
+
+  <div class="enrolled-courses-card">
+    <h3>My Enrolled Courses</h3>
+    
+    <div *ngIf="(enrolledCourses$ | async) as enrolledCoursesList; else loadingBlock">
+      <div *ngIf="enrolledCoursesList.length > 0; else noEnrolled" class="courses-list">
+        <div *ngFor="let course of enrolledCoursesList" class="enrolled-course-item">
+          <div class="course-info">
+            <span class="course-code">{{ course.code }}</span>
+            <span class="course-name">{{ course.name }}</span>
+          </div>
+          <span class="course-credits">{{ course.credits }} Credits</span>
+        </div>
+      </div>
+      <ng-template #noEnrolled>
+        <p class="no-courses-msg">You have not enrolled in any courses yet.</p>
+      </ng-template>
+    </div>
+    
+    <ng-template #loadingBlock>
+      <p class="no-courses-msg">Loading enrolled courses list...</p>
+    </ng-template>
+  </div>
+
+  <!-- Hierarchical DI Scoping Demo -->
+  <div class="di-demo-card">
+    <h3>Hierarchical Dependency Injection Demo</h3>
+    <p>Below are two instances of the same Notification component. Since <code>NotificationService</code> is provided at the component level (using <code>providers: [NotificationService]</code>), each instance gets its own isolated service instance. Adding a message to one box will not affect the other box!</p>
+    <div class="notification-grid">
+      <app-notification></app-notification>
+      <app-notification></app-notification>
+    </div>
+  </div>
+</div>

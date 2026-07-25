@@ -1,0 +1,23 @@
+<div class="detail-container">
+  <div *ngIf="course; else notFound" class="detail-card">
+    <button class="btn-back" routerLink="/courses">← Back to Course List</button>
+    <h2>{{ course.name }}</h2>
+    <div class="course-meta">
+      <p><strong>Code:</strong> {{ course.code }}</p>
+      <p><strong>Credits:</strong> {{ course.credits }}</p>
+      <p><strong>Grade Status:</strong> <span class="badge" [ngClass]="'badge-' + course.gradeStatus">{{ course.gradeStatus }}</span></p>
+      <p><strong>Status:</strong> {{ course.enrolled ? 'Enrolled' : 'Not Enrolled' }}</p>
+    </div>
+    <div class="syllabus">
+      <h3>Syllabus Overview</h3>
+      <p>This course covers fundamental concepts, practical architecture design, testing strategies, and production deployment processes. It is designed to prepare students for real-world full-stack development.</p>
+    </div>
+  </div>
+  <ng-template #notFound>
+    <div class="error-card">
+      <h2>Course Not Found</h2>
+      <p>The requested course ID could not be found or does not exist.</p>
+      <button class="btn btn-primary" routerLink="/courses">Back to Courses</button>
+    </div>
+  </ng-template>
+</div>

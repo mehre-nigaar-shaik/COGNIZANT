@@ -1,0 +1,34 @@
+<div class="dashboard-container">
+  <div class="welcome-banner">
+    <h1>Welcome to {{ portalName }}</h1>
+    <p>Empowering students to manage profiles, track enrollments, and check grades all in one place.</p>
+  </div>
+
+  <div class="stats-grid">
+    <div class="stat-card">
+      <span class="stat-label">Courses Available</span>
+      <span class="stat-value">{{ coursesCount }}</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-label">Enrolled</span>
+      <span class="stat-value">{{ enrolledCount }}</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-label">Current GPA</span>
+      <span class="stat-value">{{ gpa }}</span>
+    </div>
+  </div>
+
+  <div class="interactive-section">
+    <div class="enroll-action">
+      <button class="btn btn-primary" [disabled]="!isPortalActive" (click)="onEnrollClick()">Enroll Now</button>
+      <p class="enroll-msg" *ngIf="message">{{ message }}</p>
+    </div>
+
+    <div class="search-action">
+      <label for="search">Quick Search:</label>
+      <input id="search" [(ngModel)]="searchTerm" placeholder="Enter course name...">
+      <p class="search-preview" *ngIf="searchTerm">Searching for: <strong>{{ searchTerm }}</strong></p>
+    </div>
+  </div>
+</div>

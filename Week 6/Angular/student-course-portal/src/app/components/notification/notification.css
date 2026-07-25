@@ -1,0 +1,44 @@
+.notification-box {
+  background: #fff8e1;
+  border: 1px solid #ffe082;
+  border-radius: 8px;
+  padding: 1.5rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 1.5rem;
+}
+
+.notification-box h4 {
+  margin-top: 0;
+  color: #ff8f00;
+  margin-bottom: 1rem;
+}
+
+.input-area {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.input-area input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #ffd54f;
+  border-radius: 4px;
+  outline: none;
+}
+
+.message-list {
+  padding-left: 1.25rem;
+  margin: 0;
+}
+
+.message-list li {
+  margin-bottom: 0.5rem;
+  color: #5d4037;
+}
+
+.empty-msg {
+  color: #bcaaa4;
+  font-style: italic;
+  margin: 0;
+}

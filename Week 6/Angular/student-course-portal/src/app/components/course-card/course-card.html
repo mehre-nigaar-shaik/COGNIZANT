@@ -1,0 +1,37 @@
+<div class="course-card"
+     [ngClass]="{
+       'card--enrolled': (enrolledIds$ | async)?.includes(course.id),
+       'card--full': (course.credits ?? 0) >= 4,
+       'expanded': isExpanded
+     }"
+     [ngStyle]="{ 'border-left-color': course.gradeStatus === 'passed' ? '#2e7d32' : course.gradeStatus === 'failed' ? '#c62828' : '#757575' }"
+     appHighlight="#f0f4f8">
+  
+  <div class="card-header">
+    <h3>{{ course.name }}</h3>
+    <div [ngSwitch]="course.gradeStatus" class="badge-container">
+      <span *ngSwitchCase="'passed'" class="badge badge-passed">Passed</span>
+      <span *ngSwitchCase="'failed'" class="badge badge-failed">Failed</span>
+      <span *ngSwitchCase="'pending'" class="badge badge-pending">Pending</span>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <p><strong>Credits:</strong> {{ course.credits | creditLabel }}</p>
+    
+    <div *ngIf="isExpanded" class="expanded-info">
+      <p><strong>Course Code:</strong> {{ course.code }}</p>
+      <p><strong>Course ID:</strong> {{ course.id }}</p>
+      <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Core syllabus covers fundamentals and practical labs.</p>
+    </div>
+  </div>
+
+  <div class="card-actions">
+    <button class="btn btn-secondary" (click)="toggleExpand(); $event.stopPropagation()">
+      {{ isExpanded ? 'Hide Details' : 'Show Details' }}
+    </button>
+    <button class="btn btn-enroll" [ngClass]="{'btn-unenroll': (enrolledIds$ | async)?.includes(course.id)}" (click)="onEnrollClick(); $event.stopPropagation()">
+      {{ (enrolledIds$ | async)?.includes(course.id) ? 'Unenroll' : 'Enroll' }}
+    </button>
+  </div>
+</div>

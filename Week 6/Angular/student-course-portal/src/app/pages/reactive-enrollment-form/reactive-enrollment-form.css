@@ -1,0 +1,178 @@
+.form-container {
+  max-width: 600px;
+  margin: 3rem auto;
+  padding: 2.5rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-container h2 {
+  color: #1e3c72;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #eaeaea;
+  padding-bottom: 0.75rem;
+  font-size: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group select {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+/* Angular validation states */
+.form-group input.ng-invalid.ng-touched,
+.form-group select.ng-invalid.ng-touched {
+  border-color: #c62828 !important;
+  background-color: #ffebee;
+}
+
+.form-group input.ng-valid.ng-touched,
+.form-group select.ng-valid.ng-touched {
+  border-color: #2e7d32 !important;
+  background-color: #e8f5e9;
+}
+
+.checkbox-group {
+  flex-direction: row !important;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.checkbox-group label {
+  margin-bottom: 0;
+  font-weight: normal;
+  font-size: 0.9rem;
+}
+
+.error-msg {
+  color: #c62828;
+  font-size: 0.85rem;
+  margin-top: 0.4rem;
+  font-weight: 500;
+}
+
+.pending-msg {
+  color: #f57c00;
+  font-size: 0.85rem;
+  margin-top: 0.4rem;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.success-message {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  border-left: 5px solid #2e7d32;
+  padding: 1.25rem;
+  border-radius: 6px;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.additional-courses-section {
+  background: #fdfdfd;
+  padding: 1rem;
+  border: 1px solid #eee;
+  border-radius: 8px;
+}
+
+.form-array-item {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.form-array-item input {
+  flex: 1;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-submit {
+  background-color: #1e3c72;
+  color: white;
+}
+
+.btn-submit:hover:not(:disabled) {
+  background-color: #162b53;
+}
+
+.btn-submit:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.btn-reset {
+  background-color: #f1f1f1;
+  color: #333;
+}
+
+.btn-reset:hover {
+  background-color: #e0e0e0;
+}
+
+.btn-add {
+  align-self: flex-start;
+  background: #e3f2fd;
+  color: #0d47a1;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  border: 1px dashed #0d47a1;
+}
+
+.btn-add:hover {
+  background: #bbdefb;
+}
+
+.btn-remove {
+  background: #ffcdd2;
+  color: #c62828;
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+}
+
+.btn-remove:hover {
+  background: #ef9a9a;
+}

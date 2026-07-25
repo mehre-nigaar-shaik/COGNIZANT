@@ -1,0 +1,119 @@
+.detail-container {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.detail-card, .error-card {
+  background: white;
+  border-radius: 10px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.btn-back {
+  background: none;
+  border: none;
+  color: #1e3c72;
+  font-weight: bold;
+  font-size: 0.95rem;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 1.5rem;
+  transition: color 0.3s;
+}
+
+.btn-back:hover {
+  color: #2a5298;
+  text-decoration: underline;
+}
+
+.detail-card h2 {
+  color: #1e3c72;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.course-meta {
+  background: #f4f7f6;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.course-meta p {
+  margin: 0.5rem 0;
+  font-size: 1.05rem;
+  color: #444;
+}
+
+.course-meta strong {
+  color: #333;
+  width: 150px;
+  display: inline-block;
+}
+
+.badge {
+  font-size: 0.8rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.badge-passed {
+  background-color: #c8e6c9;
+  color: #256029;
+}
+
+.badge-failed {
+  background-color: #ffcdd2;
+  color: #c62828;
+}
+
+.badge-pending {
+  background-color: #e0e0e0;
+  color: #616161;
+}
+
+.syllabus h3 {
+  color: #1e3c72;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.syllabus p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.error-card {
+  text-align: center;
+}
+
+.error-card h2 {
+  color: #c62828;
+}
+
+.error-card p {
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.btn-primary {
+  background-color: #1e3c72;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #162b53;
+}

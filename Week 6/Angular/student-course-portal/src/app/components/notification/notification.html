@@ -1,0 +1,17 @@
+<div class="notification-box">
+  <h4>Notification Manager (Scoped Service Demo)</h4>
+  
+  <div class="input-area">
+    <input #msgInput type="text" placeholder="Type a message...">
+    <button class="btn btn-primary" (click)="addMessage(msgInput.value); msgInput.value=''">Add Message</button>
+    <button class="btn btn-secondary" (click)="clearAll()">Clear</button>
+  </div>
+
+  <ul class="message-list" *ngIf="messages.length > 0; else emptyMessages">
+    <li *ngFor="let m of messages">{{ m }}</li>
+  </ul>
+  
+  <ng-template #emptyMessages>
+    <p class="empty-msg">No local notifications.</p>
+  </ng-template>
+</div>

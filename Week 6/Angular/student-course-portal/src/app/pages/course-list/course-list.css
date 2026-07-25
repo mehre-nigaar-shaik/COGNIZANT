@@ -1,0 +1,76 @@
+.course-list-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.course-list-container h2 {
+  color: #1e3c72;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 0.5rem;
+}
+
+.filter-bar {
+  margin-bottom: 1.5rem;
+}
+
+.filter-bar input {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.filter-bar input:focus {
+  border-color: #1e3c72;
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.course-grid > app-course-card {
+  cursor: pointer;
+}
+
+.loading-state, .empty-state {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+  padding: 3rem;
+  background: #fdfdfd;
+  border-radius: 8px;
+  border: 1px dashed #ccc;
+}
+
+.error-state {
+  text-align: center;
+  color: #c62828;
+  padding: 2.5rem;
+  background-color: #ffebee;
+  border-radius: 8px;
+  border: 1px solid #ffcdd2;
+  margin-bottom: 1.5rem;
+}
+
+.error-state p {
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+
+.selection-indicator {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #e3f2fd;
+  border-radius: 6px;
+  border-left: 5px solid #1e3c72;
+  color: #0d47a1;
+}

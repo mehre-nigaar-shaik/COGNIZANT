@@ -1,0 +1,13 @@
+{
+  "courses": [
+    { "id": "1", "name": "Introduction to Angular", "code": "CS101", "credits": 3, "gradeStatus": "passed", "enrolled": false },
+    { "id": "2", "name": "Data Structures and Algorithms", "code": "CS102", "credits": 4, "gradeStatus": "passed", "enrolled": false },
+    { "id": "3", "name": "Database Management Systems", "code": "CS103", "credits": 3, "gradeStatus": "pending", "enrolled": false },
+    { "id": "4", "name": "Web Development Basics", "code": "CS104", "credits": 2, "gradeStatus": "failed", "enrolled": false },
+    { "id": "5", "name": "Software Engineering Principles", "code": "CS105", "credits": 4, "gradeStatus": "pending", "enrolled": false }
+  ],
+  "students": [
+    { "id": "1", "name": "Amit Tiwari", "email": "amit@example.com", "regNo": "REG2026FSE43", "gpa": 3.8, "major": "Computer Science & Engineering" }
+  ],
+  "enrollments": []
+}
