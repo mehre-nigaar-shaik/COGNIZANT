@@ -1,0 +1,64 @@
+pipeline {
+    agent any
+
+    tools {
+        nodejs 'node20' // Assumes NodeJS is configured in Jenkins global tool configuration
+    }
+
+    environment {
+        PROJECT_DIR = 'Week-06/Angular/student-course-portal'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                dir("${env.PROJECT_DIR}") {
+                    sh 'npm install'
+                }
+            }
+        }
+
+        stage('Lint') {
+            steps {
+                dir("${env.PROJECT_DIR}") {
+                    sh 'npm run lint --if-present'
+                }
+            }
+        }
+
+        stage('Unit Testing') {
+            steps {
+                dir("${env.PROJECT_DIR}") {
+                    // Executes unit tests using ChromeHeadless in CI environment
+                    sh 'npx ng test --watch=false --browsers=ChromeHeadless'
+                }
+            }
+        }
+
+        stage('Build Application') {
+            steps {
+                dir("${env.PROJECT_DIR}") {
+                    sh 'npx ng build --configuration=production'
+                }
+            }
+        }
+    }
+
+    post {
+        success {
+            dir("${env.PROJECT_DIR}") {
+                archiveArtifacts artifacts: 'dist/student-course-portal/**', onlyIfSuccessful: true
+            }
+            echo 'Pipeline completed successfully. Build artifacts archived.'
+        }
+        failure {
+            echo 'Pipeline failed. Please check build logs.'
+        }
+    }
+}

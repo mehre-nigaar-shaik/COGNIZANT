@@ -1,0 +1,44 @@
+name: Angular Student Course Portal CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+        cache-dependency-path: 'Week-06/Angular/student-course-portal/package-lock.json'
+
+    - name: Install Dependencies
+      working-directory: Week-06/Angular/student-course-portal
+      run: npm ci
+
+    - name: Run Linting
+      working-directory: Week-06/Angular/student-course-portal
+      run: npm run lint --if-present
+
+    - name: Run Tests (Headless Chrome)
+      working-directory: Week-06/Angular/student-course-portal
+      run: npx ng test --watch=false --browsers=ChromeHeadless
+
+    - name: Build Application
+      working-directory: Week-06/Angular/student-course-portal
+      run: npx ng build --configuration=production
+
+    - name: Upload Build Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: angular-build-assets
+        path: Week-06/Angular/student-course-portal/dist/student-course-portal/

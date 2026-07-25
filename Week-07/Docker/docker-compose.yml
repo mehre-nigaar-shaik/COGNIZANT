@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  # Mock REST API Backend database service
+  backend:
+    image: node:20-alpine
+    container_name: student-course-backend
+    working_dir: /app
+    volumes:
+      # Mount the db.json database file directly into the container
+      - ../../Week-06/Angular/student-course-portal/db.json:/app/db.json
+    ports:
+      - "3000:3000"
+    command: npx json-server --watch db.json --host 0.0.0.0 --port 3000
+
+  # Containerized Angular Frontend service
+  frontend:
+    build:
+      context: ../../
+      dockerfile: Week-07/Docker/Dockerfile
+    container_name: student-course-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: always
